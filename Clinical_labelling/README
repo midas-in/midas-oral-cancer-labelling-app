@@ -1,6 +1,6 @@
 Clinical Image Labelling Tool
 
-A production-ready graphical application for systematic annotation of clinical images across multi-case and multi-visit datasets. Designed for medical research and AI training workflows with full audit trail, timing analytics, and regulatory-ready summary reports.
+An executable application for systematic annotation of clinical images across multi-case and multi-visit datasets. Designed for medical research and AI training workflows with full audit trail, timing analytics, and regulatory-ready summary reports.
 
 Features
 
@@ -81,7 +81,12 @@ python -m tkinter
 3. Pillow (Image Handling)
 pip install pillow
 
- How to Run
+
+How to Run
+Windows - Execute RUN_XC_labeller.exe 
+Executable on Linux using wine. 
+
+Terminal Based Run - 
 python3 clinical_label_tool.py
 
 Workflow
