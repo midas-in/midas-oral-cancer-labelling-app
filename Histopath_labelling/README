@@ -1,6 +1,6 @@
 Histopathology Image Labelling Tool
 
-A clinical-grade GUI tool for expert annotation of histopathology images with structured diagnosis and multi-tier grading, designed for OSCC and precancer research pipelines.
+An executable clinical-grade GUI tool for expert annotation of histopathology images with structured diagnosis and multi-tier grading, designed for OSCC and precancer research pipelines.
 
 This version enforces correct pathological logic:
 
@@ -92,6 +92,10 @@ python -m tkinter
 pip install pillow
 
  How to Run
+Windows - Execute RUN_Histopath_labeller.exe 
+Executable on Linux using wine. 
+
+Terminal Based Run - 
 python3 histopath_label_tool.py
 
 
