@@ -1,0 +1,184 @@
+Histopathology Image Labelling Tool
+
+A clinical-grade GUI tool for expert annotation of histopathology images with structured diagnosis and multi-tier grading, designed for OSCC and precancer research pipelines.
+
+This version enforces correct pathological logic:
+
+Ungradable is a grading state (not a primary diagnosis)
+
+Indeterminate is a primary diagnosis with mandatory comment
+
+Dysplasia: Binary + Three-Tier OR Ungradable
+
+Cancer: Three-Tier Differentiation OR Ungradable
+
+Normal: Tissue type (Stroma / Epithelium / Both)
+
+Key Features
+Pathology-Correct Grading Logic
+Primary Diagnosis	Secondary Rules
+Normal	Tissue: Stroma / Epithelium / Both
+Dysplasia	Binary (Low/High Risk) + Three-Tier (Mild/Moderate/Severe) OR Ungradable
+Cancer	Three-Tier Differentiation (Well/Moderate/Poor) OR Ungradable
+Indeterminate	Mandatory free-text reason
+GUI Capabilities
+
+Full-screen adaptive image viewer (Tkinter + PIL)
+
+Clickable progress bar (jump to any image)
+
+Case-change alert banner
+
+Previous label recall
+
+Relabel support
+
+Auto-save every 25 images
+
+Case-wise sidebar summary
+
+Time-tracking per image
+
+Comment enforcement for Indeterminate and Ungradable
+
+Regulatory-ready audit summary
+
+Expected Dataset Structure
+Dataset_Root/
+ ├── Case_001/
+ │    ├── Visit_1/
+ │    │    └── Histopath/
+ │    │         ├── Tongue/
+ │    │         │    ├── 10x/
+ │    │         │    │    ├── img1.jpg
+ │    │         │    ├── 40x/
+ │    │         │         ├── img2.tif
+ ├── Case_002/
+
+
+Rules:
+
+Folder name must contain "histopath"
+
+Magnification folders like 10x, 20x, 40x
+
+Supported formats: .jpg .jpeg .png .tif .tiff
+
+ Installation
+1. Python
+
+Python ≥ 3.8
+
+2. Tkinter (GUI Library)
+Ubuntu / Debian
+sudo apt-get install python3-tk
+
+RHEL / CentOS
+sudo yum install tkinter
+
+Arch
+sudo pacman -S tk
+
+macOS
+brew install python-tk
+
+Windows
+
+Bundled by default. Verify:
+
+python -m tkinter
+
+3. Pillow (Image Handling)
+pip install pillow
+
+ How to Run
+python3 histopath_label_tool.py
+
+
+Workflow:
+
+Select Dataset Root
+
+Select Output CSV
+
+Enter Annotator Name
+
+Start Labelling
+
+Grade + Comment
+
+Auto summary & audit file generated
+
+📝 Output Files
+1. Main Labels CSV
+
+histopath_labels.csv
+
+Columns:
+
+| Case_ID | Visit_ID | Body_Site | Magnification | Image_File | Diagnosis | Subtype | Comment | Time_Spent_sec | Annotator | Timestamp |
+
+2. Session Summary Report
+
+histopath_labels_summary.txt
+
+Automatically generated audit document containing:
+
+Annotator identity
+
+Start / End time
+
+Total duration
+
+Images labeled & completion %
+
+Unique cases
+
+Label distribution
+
+Average & median time per image
+
+Compliance-ready header
+
+Suitable for:
+
+Ethics committee submissions
+
+Multi-pathologist concordance studies
+
+AI ground-truth documentation
+
+Clinical trial audit trails
+
+Designed For
+
+OSCC / OPMD histopathology annotation
+
+Multi-magnification grading
+
+Inter-institutional datasets
+
+AI model training & benchmarking
+
+Regulatory-grade annotation traceability (AIIMS / MIDAS scale)
+
+Data Safety
+
+Images are never modified
+
+All work is local (offline)
+
+Unicode-safe CSV and TXT
+
+Full path-based uniqueness
+
+Time-stamped audit trail
+
+Clinical Logic Compliance
+
+Ungradable is not a diagnosis
+Grading enforced before save
+Mandatory comments for uncertainty
+Binary + Three-Tier dysplasia
+WHO-aligned differentiation grading for OSCC and OPMD
+Quality control via timing metrics
