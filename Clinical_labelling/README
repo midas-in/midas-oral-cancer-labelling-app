@@ -1,0 +1,193 @@
+Clinical Image Labelling Tool
+
+An executable application for systematic annotation of clinical images across multi-case and multi-visit datasets. Designed for medical research and AI training workflows with full audit trail, timing analytics, and regulatory-ready summary reports.
+
+Features
+
+Walks directory hierarchy: Case → Visit → XC / CLINICAL → Images
+
+High-resolution image viewer (Tkinter + PIL)
+
+One-click labels:
+
+Suspicious
+
+Non-Suspicious
+
+NA (with mandatory free-text comment)
+
+Case-change alert banner when moving between patients
+
+Previously assigned label display on revisit
+
+Back navigation and relabeling
+
+Save progress anytime (partial CSV + summary)
+
+Final review table before export
+
+Automatic detailed session summary:
+
+Per-case and per-label statistics
+
+Annotation timing (avg, min, max, median)
+
+Productivity (images/hour)
+
+NA comment log
+
+Annotator audit trail
+
+ Expected Folder Structure
+Batch_Folder/
+ ├── Case_001/
+ │    ├── Visit_1/
+ │    │    └── XC_CLINICAL/
+ │    │         ├── img1.jpg
+ │    │         ├── img2.png
+ │    ├── Visit_2/
+ │         └── CLINICAL_IMAGES/
+ ├── Case_002/
+ │    └── Visit_1/
+ │         └── XC/
+
+
+Folder name must contain XC or CLINICAL (case-insensitive).
+
+ Installation
+1. Python
+
+Python ≥ 3.8 is required.
+
+2. Tkinter (GUI Library)
+Ubuntu / Debian
+sudo apt-get install python3-tk
+
+RHEL / CentOS
+sudo yum install tkinter
+
+Arch Linux
+sudo pacman -S tk
+
+macOS
+brew install python-tk
+
+Windows
+
+Tkinter comes bundled with Python. Verify:
+
+python -m tkinter
+
+3. Pillow (Image Handling)
+pip install pillow
+
+
+How to Run
+Windows - Execute RUN_XC_labeller.exe 
+Executable on Linux using wine. 
+
+Terminal Based Run - 
+python3 clinical_label_tool.py
+
+Workflow
+
+Select Batch Folder
+
+Choose output CSV file path
+
+Enter Annotator Name
+
+Start labeling
+
+Review all labels in table view
+
+Save final CSV and Summary Report
+
+ Output Files
+1. Labels CSV
+
+clinical_labels.csv
+
+Columns:
+
+| case | visit | file | label | comment |
+
+Ready for:
+
+Model training
+
+Ground-truth benchmarking
+
+Quality control audits
+
+2. Session Summary Report
+
+clinical_labels_summary.txt
+
+Automatically generated audit document containing:
+
+Annotator identity
+
+Session start & end time
+
+Total annotation duration
+
+Images labeled and remaining
+
+Completion percentage
+
+Per-label distribution
+
+Per-case statistics
+
+Average / fastest / slowest / median time per image
+
+NA comments with file traceability
+
+Productivity (images per hour, efficiency)
+
+Regulatory-ready structured report
+
+Suitable for:
+
+IRB / Ethics submissions
+
+Inter-institutional benchmarking
+
+Annotation quality assurance
+
+Clinical AI pipeline documentation
+
+ Designed For
+
+Clinical dataset curation
+
+Histopathology, fundus, WSI, clinical photography
+
+Multi-center annotation pipelines
+
+AI training and validation datasets
+
+Medical audit and compliance workflows (AIIMS / MIDAS scale)
+
+ Data Safety
+
+Original images are never modified
+
+All outputs written only to user-selected locations
+
+Unicode-safe CSV and TXT export
+
+Fully offline, no network access
+
+ Future Extensions (Version 2)
+
+Case-level diagnosis enforcement
+
+Locked progression until all images in a case are labeled
+
+Inter-annotator agreement (Cohen’s κ)
+
+DICOM viewer support
+
+Encrypted audit trail for clinical trials
