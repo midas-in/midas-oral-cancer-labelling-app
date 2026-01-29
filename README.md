@@ -263,3 +263,11 @@ medical-annotation-toolkit/
 - Validate data before using in downstream analysis
 
 ---
+
+## License
+
+[GNU GENERAL PUBLIC LICENSE](https://github.com/midas-in/midas-oral-cancer-labelling-app/blob/main/LICENSE)
+
+A comprehensive repository containing two clinical-grade, executable GUI applications for systematic annotation of medical images. Designed for medical research, AI training workflows, and regulatory-compliant documentation at institutional scale (AIIMS / MIDAS).
+
+    Copyright (C) 2025 IISc/Artpark
